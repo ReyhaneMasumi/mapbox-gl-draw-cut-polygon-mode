@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "cut polygon mode",
+  "name": "A custom mode for MapboxGL Draw to cut polygons",
   "icons": [
     {
       "src": "favicon.ico",
