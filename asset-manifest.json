@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/mapbox-gl-draw-cut-polygon-mode/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/main.e6b3d835.chunk.js",
-    "main.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/main.e6b3d835.chunk.js.map",
-    "runtime-main.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/runtime-main.b3b4ce36.js",
-    "runtime-main.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/runtime-main.b3b4ce36.js.map",
-    "static/js/2.a7379a6e.chunk.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/2.a7379a6e.chunk.js",
-    "static/js/2.a7379a6e.chunk.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/2.a7379a6e.chunk.js.map",
-    "static/js/3.4fda25c2.chunk.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/3.4fda25c2.chunk.js",
-    "static/js/3.4fda25c2.chunk.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/3.4fda25c2.chunk.js.map",
+    "main.css": "/mapbox-gl-draw-cut-polygon-mode/static/css/main.c89b91d4.chunk.css",
+    "main.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/main.1a08a2f0.chunk.js",
+    "main.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/main.1a08a2f0.chunk.js.map",
+    "runtime-main.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/runtime-main.fe6078c1.js",
+    "runtime-main.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/runtime-main.fe6078c1.js.map",
+    "static/css/2.dbeb0df7.chunk.css": "/mapbox-gl-draw-cut-polygon-mode/static/css/2.dbeb0df7.chunk.css",
+    "static/js/2.7b99b744.chunk.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/2.7b99b744.chunk.js",
+    "static/js/2.7b99b744.chunk.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/2.7b99b744.chunk.js.map",
+    "static/js/3.6acd796a.chunk.js": "/mapbox-gl-draw-cut-polygon-mode/static/js/3.6acd796a.chunk.js",
+    "static/js/3.6acd796a.chunk.js.map": "/mapbox-gl-draw-cut-polygon-mode/static/js/3.6acd796a.chunk.js.map",
     "index.html": "/mapbox-gl-draw-cut-polygon-mode/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/mapbox-gl-draw-cut-polygon-mode/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.a7379a6e.chunk.js.LICENSE.txt": "/mapbox-gl-draw-cut-polygon-mode/static/js/2.a7379a6e.chunk.js.LICENSE.txt",
-    "static/media/logo.103b5fa1.svg": "/mapbox-gl-draw-cut-polygon-mode/static/media/logo.103b5fa1.svg"
+    "static/css/2.dbeb0df7.chunk.css.map": "/mapbox-gl-draw-cut-polygon-mode/static/css/2.dbeb0df7.chunk.css.map",
+    "static/css/main.c89b91d4.chunk.css.map": "/mapbox-gl-draw-cut-polygon-mode/static/css/main.c89b91d4.chunk.css.map",
+    "static/js/2.7b99b744.chunk.js.LICENSE.txt": "/mapbox-gl-draw-cut-polygon-mode/static/js/2.7b99b744.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b3b4ce36.js",
-    "static/js/2.a7379a6e.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.e6b3d835.chunk.js"
+    "static/js/runtime-main.fe6078c1.js",
+    "static/css/2.dbeb0df7.chunk.css",
+    "static/js/2.7b99b744.chunk.js",
+    "static/css/main.c89b91d4.chunk.css",
+    "static/js/main.1a08a2f0.chunk.js"
   ]
 }
