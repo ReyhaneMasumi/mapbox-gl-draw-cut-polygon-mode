@@ -3,7 +3,7 @@ import {
   modes,
   events,
 } from '@mapbox/mapbox-gl-draw/src/constants';
-import { difference } from '@turf/turf';
+import difference from '@turf/difference';
 
 const CutPolygonMode = {
   onSetup: function () {

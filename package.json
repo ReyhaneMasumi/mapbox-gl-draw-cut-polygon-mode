@@ -20,6 +20,9 @@
     "url": "https://github.com/ReyhaneMasumi/mapbox-gl-draw-cut-polygon-mode/issues"
   },
   "homepage": "https://github.com/ReyhaneMasumi/mapbox-gl-draw-cut-polygon-mode#readme",
+  "files": [
+    "src"
+  ],
   "devDependencies": {},
   "peerDependencies": {
     "@mapbox/mapbox-gl-draw": "1.2.0"
