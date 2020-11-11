@@ -15,12 +15,10 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registery.npmjs.com/
-      - name: Install and Publish 🔧
-        run: |
-            npm config delete proxy
-            npm publish --access public
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish 🔧
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
       - name: Install and Build 🔧
         run: |
           npm install
