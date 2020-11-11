@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://www.npmjs.com/package/
+          registry-url: https://registery.npmjs.com/
       - name: Install and Publish 🔧
         run: npm publish --access public
         env:
