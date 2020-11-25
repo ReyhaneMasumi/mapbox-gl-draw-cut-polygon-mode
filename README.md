@@ -8,22 +8,24 @@ A custom mode for [MapboxGL-Draw](https://github.com/mapbox/mapbox-gl-draw) to c
 
 ## [DEMO](https://reyhanemasumi.github.io/mapbox-gl-draw-cut-polygon-mode/)
 
+![A Gif showing demo usage](demo/public/demo.gif)
+
 ## Install
 
 ```bash
-npm install mapbox-gl-draw-cut-polygon-mode
+npm install mapbox-gl-draw-cut-polygon-mode mapbox-gl-draw-passing-mode
 ```
 
 ## Usage
 
 ```js
-import mapboxGl from 'mapbox-gl';
-import MapboxDraw from '@mapbox/mapbox-gl-draw';
-import CutPolygunMode from 'mapbox-gl-draw-cut-polygon-mode';
+import mapboxGl from "mapbox-gl";
+import MapboxDraw from "@mapbox/mapbox-gl-draw";
+import CutPolygonMode from "mapbox-gl-draw-cut-polygon-mode";
 
 const map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/mapbox/streets-v11',
+  container: "map", // container id
+  style: "mapbox://styles/mapbox/streets-v11",
   center: [-91.874, 42.76], // starting position
   zoom: 12, // starting zoom
 });
@@ -32,13 +34,16 @@ const draw = new MapboxDraw({
   userProperties: true,
   displayControlsDefault: false,
   modes: Object.assign(MapboxDraw.modes, {
-    cutPolygunMode: CutPolygunMode,
+    cutPolygonMode: CutPolygonMode,
+    passing_mode_polygon: mapboxGlDrawPassingMode(
+      MapboxDraw.modes.draw_polygon
+    ),
   }),
 });
 map.addControl(draw);
 
 // when mode drawing should be activated
-draw.changeMode('cutPolygunMode');
+draw.changeMode("cutPolygonMode");
 ```
 
 ## [Example](https://github.com/ReyhaneMasumi/mapbox-gl-draw-cut-polygon-mode/blob/main/demo/src/App.js)
