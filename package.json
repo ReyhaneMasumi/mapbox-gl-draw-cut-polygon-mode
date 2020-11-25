@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A custom mode for MapboxGL Draw to cut polygons",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
@@ -24,7 +25,8 @@
   },
   "homepage": "https://github.com/ReyhaneMasumi/mapbox-gl-draw-cut-polygon-mode#readme",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
