@@ -5,6 +5,7 @@
 # mapbox-gl-draw-cut-polygon-mode
 
 A custom mode for [MapboxGL-Draw](https://github.com/mapbox/mapbox-gl-draw) to cut polygons
+> Check [mapbox-gl-draw-split-polygon-mode](https://github.com/ReyhaneMasumi/mapbox-gl-draw-split-polygon-mode) For splitting polygons.
 
 ## [DEMO](https://reyhanemasumi.github.io/mapbox-gl-draw-cut-polygon-mode/)
 
@@ -14,6 +15,11 @@ A custom mode for [MapboxGL-Draw](https://github.com/mapbox/mapbox-gl-draw) to c
 
 ```bash
 npm install mapbox-gl-draw-cut-polygon-mode mapbox-gl-draw-passing-mode
+```
+or use CDN:
+
+```html
+<script src='https://unpkg.com/mapbox-gl-draw-cut-polygon-mode'></script>
 ```
 
 ## Usage
