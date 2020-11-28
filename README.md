@@ -28,6 +28,7 @@ or use CDN:
 import mapboxGl from "mapbox-gl";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
 import CutPolygonMode from "mapbox-gl-draw-cut-polygon-mode";
+import mapboxGlDrawPassingMode from 'mapbox-gl-draw-passing-mode';
 
 const map = new mapboxgl.Map({
   container: "map", // container id
