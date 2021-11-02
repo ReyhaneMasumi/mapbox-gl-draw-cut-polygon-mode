@@ -1,4 +1,4 @@
-import { geojsonTypes } from "@mapbox/mapbox-gl-draw/src/constants";
+import { geojsonTypes, updateActions, events } from "@mapbox/mapbox-gl-draw/src/constants";
 import difference from "@turf/difference";
 
 const SplitPolygonMode = {};
@@ -37,6 +37,13 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
       }
     });
   });
+};
+
+SplitPolygonMode.fireUpdate = function() {
+    this.map.fire(events.UPDATE, {
+        action: updateActions.MOVE,
+        features: this.getSelected().map(f => f.toGeoJSON())
+    });
 };
 
 export default SplitPolygonMode;
