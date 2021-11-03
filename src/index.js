@@ -48,16 +48,16 @@ SplitPolygonMode.fireUpdate = function() {
 };
 SplitPolygonMode.onMouseOut = function(state) {
   // As soon as you mouse leaves the canvas, update the feature
-  if (state.dragMoving) {
+  // if (state.dragMoving) {
       this.fireUpdate();
-  }
+  // }
 };
 
 SplitPolygonMode.onTouchEnd = SplitPolygonMode.onMouseUp = function(state) {
-  if (state.dragMoving) {
+  // if (state.dragMoving) {
       this.fireUpdate();
-  }
-  this.stopDragging(state);
+  // }
+  // this.stopDragging(state);
 };
 
 export default SplitPolygonMode;
