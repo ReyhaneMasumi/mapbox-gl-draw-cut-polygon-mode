@@ -1,4 +1,4 @@
-import { geojsonTypes } from "@mapbox/mapbox-gl-draw/src/constants";
+import { geojsonTypes, updateActions, events } from "@mapbox/mapbox-gl-draw/src/constants";
 import difference from "@turf/difference";
 
 const SplitPolygonMode = {};
@@ -32,11 +32,19 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
         let newF = this.newFeature(afterCut);
         newF.id = feature.id;
         this.addFeature(newF);
+        this.fireUpdate(newF);
       } else {
         console.info("The feature is not Polygon/MultiPolygon!");
       }
     });
   });
+};
+
+SplitPolygonMode.fireUpdate = function(newF) {
+    this.map.fire(events.UPDATE, {
+        action: updateActions.CHANGE_COORDINATES,
+        features: newF.toGeoJSON()
+    });
 };
 
 export default SplitPolygonMode;
