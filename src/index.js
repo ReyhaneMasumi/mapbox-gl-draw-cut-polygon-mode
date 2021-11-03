@@ -33,6 +33,7 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
         newF.id = feature.id;
         this.deleteFeature(feature.id);
         this.addFeature(newF);
+        this.fireUpdate();
       } else {
         console.info("The feature is not Polygon/MultiPolygon!");
       }
