@@ -132,7 +132,7 @@ function App() {
           },
         ],
       });
-      map.on('draw.update', (e) => {console.log(e)})
+      map.on('draw.update', function (e) {console.log(e)})
     });
   }, []);
 

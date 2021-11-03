@@ -41,9 +41,22 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
 
 SplitPolygonMode.fireUpdate = function() {
     this.map.fire(events.UPDATE, {
-        action: updateActions.MOVE,
+        action: updateActions.CHANGE_COORDINATES,
         features: this.getSelected().map(f => f.toGeoJSON())
     });
+};
+SplitPolygonMode.onMouseOut = function(state) {
+  // As soon as you mouse leaves the canvas, update the feature
+  if (state.dragMoving) {
+      this.fireUpdate();
+  }
+};
+
+SplitPolygonMode.onTouchEnd = SplitPolygonMode.onMouseUp = function(state) {
+  if (state.dragMoving) {
+      this.fireUpdate();
+  }
+  this.stopDragging(state);
 };
 
 export default SplitPolygonMode;
