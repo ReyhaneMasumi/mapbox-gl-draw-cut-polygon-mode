@@ -31,9 +31,8 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
         let afterCut = difference(feature, cuttingpolygon);
         let newF = this.newFeature(afterCut);
         newF.id = feature.id;
-        this.deleteFeature(feature.id);
         this.addFeature(newF);
-        this.fireUpdate();
+        this.fireUpdate(newF);
       } else {
         console.info("The feature is not Polygon/MultiPolygon!");
       }
@@ -41,24 +40,11 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
   });
 };
 
-SplitPolygonMode.fireUpdate = function() {
+SplitPolygonMode.fireUpdate = function(newF) {
     this.map.fire(events.UPDATE, {
         action: updateActions.CHANGE_COORDINATES,
-        features: this.getSelected().map(f => f.toGeoJSON())
+        features: newF.toGeoJSON()
     });
-};
-SplitPolygonMode.onMouseOut = function(state) {
-  // As soon as you mouse leaves the canvas, update the feature
-  // if (state.dragMoving) {
-      this.fireUpdate();
-  // }
-};
-
-SplitPolygonMode.onTouchEnd = SplitPolygonMode.onMouseUp = function(state) {
-  // if (state.dragMoving) {
-      this.fireUpdate();
-  // }
-  // this.stopDragging(state);
 };
 
 export default SplitPolygonMode;
