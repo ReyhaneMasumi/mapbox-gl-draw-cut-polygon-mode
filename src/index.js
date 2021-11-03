@@ -31,6 +31,7 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
         let afterCut = difference(feature, cuttingpolygon);
         let newF = this.newFeature(afterCut);
         newF.id = feature.id;
+        this.deleteFeature(feature.id);
         this.addFeature(newF);
       } else {
         console.info("The feature is not Polygon/MultiPolygon!");
