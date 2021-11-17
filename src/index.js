@@ -23,6 +23,7 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
   display(geojson);
 
   this.changeMode("passing_mode_polygon", (cuttingpolygon) => {
+    let splited = []
     state.main.forEach((feature, idx) => {
       if (
         feature.geometry.type === geojsonTypes.POLYGON ||
@@ -31,12 +32,13 @@ SplitPolygonMode.toDisplayFeatures = function (state, geojson, display) {
         let afterCut = difference(feature, cuttingpolygon);
         let newF = this.newFeature(afterCut);
         newF.id = feature.id;
+        splited.push(newF)
         this.addFeature(newF);
-        this.fireUpdate(newF);
       } else {
         console.info("The feature is not Polygon/MultiPolygon!");
       }
     });
+    this.fireUpdate(splited);
   });
 };
 
