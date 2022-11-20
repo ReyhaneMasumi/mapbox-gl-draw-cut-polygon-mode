@@ -1,9 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import mapboxGl from "mapbox-gl";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
+import defaultDrawStyle from "@mapbox/mapbox-gl-draw/src/lib/theme";
+
+import CutPolygonMode, {
+  drawStyles as splitPolygonDrawStyles,
+} from "mapbox-gl-draw-cut-polygon-mode";
+
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
-import CutPolygonMode from "mapbox-gl-draw-cut-polygon-mode";
-import mapboxGlDrawPassingMode from "mapbox-gl-draw-passing-mode";
 import "./App.css";
 
 let map;
@@ -86,16 +90,15 @@ function App() {
         };
       },
     });
+
     draw = new MapboxDraw({
       modes: {
-        ...MapboxDraw.modes,
-        cutPolygonMode: CutPolygonMode,
-        passing_mode_polygon: mapboxGlDrawPassingMode(
-          MapboxDraw.modes.draw_polygon
-        ),
+        ...CutPolygonMode(MapboxDraw.modes),
       },
+      styles: [...splitPolygonDrawStyles(defaultDrawStyle)],
       userProperties: true,
     });
+
     drawBar = new extendDrawBar({
       draw: draw,
       buttons: [
@@ -132,13 +135,15 @@ function App() {
           },
         ],
       });
-      map.on('draw.update', function (e) {console.log(e)})
+      map.on("draw.update", function (e) {
+        console.log(e);
+      });
     });
   }, []);
 
   const splitPolygon = () => {
     try {
-      draw?.changeMode("cutPolygonMode");
+      draw?.changeMode("cut_polygon");
     } catch (err) {
       alert(err.message);
       console.error(err);
