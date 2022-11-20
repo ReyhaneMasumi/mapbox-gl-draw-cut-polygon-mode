@@ -1,18 +1,18 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import terser from "@rollup/plugin-terser";
+import pkg from "./package.json" assert { type: "json" };
 
 export default [
   {
-    input: 'src/index.js',
+    input: "src/index.js",
     plugins: [resolve(), commonjs(), terser()],
     output: {
       file: pkg.main,
-      format: 'umd',
-      exports: 'named',
-      name: 'CutPolygonMode',
-      sourcemap: process.env.NODE_ENV !== 'production',
+      format: "umd",
+      exports: "named",
+      name: "CutPolygonMode",
+      sourcemap: process.env.NODE_ENV !== "production",
     },
   },
 ];
