@@ -9,22 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 18
       - name: Bundle 📦
         run: |
           npm install
           npm run build
-      - name: Install and Build 🔧
+      - name: Install and Build Demo 🔧
+        working-directory: demo
         run: |
           npm install
           npm run build
-        working-directory: demo
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.GH_ACTIONS }}
           BRANCH: gh-pages # The branch the action should deploy to.
