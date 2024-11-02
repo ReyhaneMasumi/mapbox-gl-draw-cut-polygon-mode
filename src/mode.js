@@ -1,8 +1,4 @@
-import {
-  geojsonTypes,
-  updateActions,
-  events,
-} from "@mapbox/mapbox-gl-draw/src/constants";
+import { constants } from "@mapbox/mapbox-gl-draw";
 
 import difference from "@turf/difference";
 
@@ -11,6 +7,12 @@ import {
   highlightPropertyName,
   defaultOptions,
 } from "./constants";
+
+const {
+  geojsonTypes,
+  updateActions,
+  events
+} = constants;
 
 const CutPolygonMode = {};
 
