@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import mapboxGl from "mapbox-gl";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import defaultDrawStyle from "@mapbox/mapbox-gl-draw/src/lib/theme";
-
 import CutPolygonMode, {
   drawStyles as splitPolygonDrawStyles,
 } from "mapbox-gl-draw-cut-polygon-mode";
@@ -90,12 +88,12 @@ function App() {
         };
       },
     });
-
+    
     draw = new MapboxDraw({
       modes: {
         ...CutPolygonMode(MapboxDraw.modes),
       },
-      styles: [...splitPolygonDrawStyles(defaultDrawStyle)],
+      styles: [...splitPolygonDrawStyles(MapboxDraw.lib.theme)],
       userProperties: true,
     });
 
