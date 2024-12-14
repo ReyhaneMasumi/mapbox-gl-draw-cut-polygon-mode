@@ -1,9 +1,7 @@
-import React, { useRef, useEffect } from "react";
-import mapboxGl from "mapbox-gl";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import CutPolygonMode, {
-  drawStyles as splitPolygonDrawStyles,
-} from "mapbox-gl-draw-cut-polygon-mode";
+import mapboxGl from "mapbox-gl";
+import CutPolygonMode from "mapbox-gl-draw-cut-polygon-mode";
+import React, { useEffect, useRef } from "react";
 
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 import "./App.css";
@@ -55,21 +53,22 @@ class extendDrawBar {
   }
 }
 
+if (mapboxGl.getRTLTextPluginStatus() === "unavailable")
+  mapboxGl.setRTLTextPlugin(
+    "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js",
+    (err) => {
+      err && console.error(err);
+    },
+    true
+  );
+
 function App() {
-  if (mapboxGl.getRTLTextPluginStatus() === "unavailable")
-    mapboxGl.setRTLTextPlugin(
-      "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js",
-      (err) => {
-        err && console.error(err);
-      },
-      true
-    );
   let mapRef = useRef(null);
 
   useEffect(() => {
     map = new mapboxGl.Map({
       container: mapRef.current || "",
-      style: `https://map.ir/vector/styles/main/mapir-xyz-light-style.json`,
+      style: "https://map.ir/vector/styles/main/mapir-xyz-light-style.json",
       center: [51.3857, 35.6102],
       zoom: 10,
       pitch: 0,
@@ -88,12 +87,14 @@ function App() {
         };
       },
     });
-    
+
+    console.log("🚀 ~ useEffect ~ MapboxDraw.lib.theme:", MapboxDraw.lib);
+
     draw = new MapboxDraw({
       modes: {
         ...CutPolygonMode(MapboxDraw.modes),
       },
-      styles: [...splitPolygonDrawStyles(MapboxDraw.lib.theme)],
+      // styles: [...cutPolygonDrawStyles(MapboxDraw.lib.theme)],
       userProperties: true,
     });
 
@@ -107,6 +108,7 @@ function App() {
         },
       ],
     });
+
     map.once("load", () => {
       map.resize();
       map.addControl(drawBar, "top-right");
